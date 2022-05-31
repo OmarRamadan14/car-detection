@@ -1,9 +1,8 @@
-## Writeup Template
-### You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
+
 
 ---
 
-**Vehicle Detection Project**
+**car-detection Project**
 
 The goals / steps of this project are the following:
 
@@ -42,14 +41,16 @@ The code for this step is contained in cells 1-5 of the Python notebook.
 
 I started by reading in all the `vehicle` and `non-vehicle` images.  Here is an example of one of each of the `vehicle` and `non-vehicle` classes:
 
-![alt text][image1]
+![image](https://user-images.githubusercontent.com/104525887/171074858-a39b6572-c345-42b7-9e26-f45311177585.png)
+
 
 I then explored different color spaces and different `skimage.hog()` parameters (`orientations`, `pixels_per_cell`, and `cells_per_block`).  I grabbed random images from each of the two classes and displayed them to get a feel for what the `skimage.hog()` output looks like.
 
 Here is an example using the `YUV` color space and HOG parameters of `orientations=8`, `pixels_per_cell=(8, 8)` and `cells_per_block=(2, 2)`:
 
 
-![alt text][image2]
+![image](https://user-images.githubusercontent.com/104525887/171074908-762013d1-eac5-4e8f-bcf6-fc9001cb4a82.png)
+
 
 #### 2. Explain how you settled on your final choice of HOG parameters.
 
@@ -85,13 +86,15 @@ I tried all possible combinations of the overallping, until I realized that if I
 
 Eventually I settled on 96 and 128 which I found to be a good compromise i finding the cars close and far
 
-![alt text][image3]
+![image](https://user-images.githubusercontent.com/104525887/171074938-23414fed-4e33-46a3-9f81-1e3b4acf04e6.png)
+
 
 #### 2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
 
 Ultimately I searched on two scales using YCrCb 3-channel HOG features plus spatially binned color and histograms of color in the feature vector, which provided a nice result.  Here are some example images:
 
-![alt text][image4]
+![image](https://user-images.githubusercontent.com/104525887/171075038-9135d178-0067-4b5e-9595-87a02003d59f.png)
+
 ---
 
 ### Video Implementation
@@ -105,10 +108,12 @@ Here's a [link to my video result](./project_video_final_2.mp4)
 Described overalpping above.
 
 ### Here is the output of `scipy.ndimage.measurements.label()` on the integrated heatmap from all six frames:
-![alt text][image6]
+
+![image](https://user-images.githubusercontent.com/104525887/171075062-6a89f08b-7739-4022-b839-7dfe25654bc6.png)
 
 ### Here the resulting bounding boxes are drawn onto the last frame in the series:
-![alt text][image7]
+![image](https://user-images.githubusercontent.com/104525887/171075077-6a7828fd-2127-4c8d-af2c-7a3c2978e7f2.png)
+
 
 
 
